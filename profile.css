@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+body {
+	font-family: "メイリオ", "Hiragino Kaku Gothic Pro", sans-serif;
+}
+
+.header h1 {
+	font-family: "Roboto Mono", monospace;
+}
+
+.main {
+	margin: 5px;
+	padding: 5px;
+}
+
+.main section {
+	margin: 10px;
+	border-radius: 5px;
+	background: #f5f0cf;
+	opacity: 0.7;
+	padding: 15px;
+}
+
+/*********** レスポンシブwebデザイン ***********/
+@media screen and (min-width: 1024px) {
+
+	/* パソコン用 */
+	body {
+		background: url(./pic/blake-cheek.jpg);
+		background-size: 50% auto;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+	/* タブレット横用 */
+	body {
+		background: url(./pic/blake-cheek.jpg);
+		background-size: 50% auto;
+	}
+}
+
+@media screen and (max-width: 767px) {
+
+	/* タブレット縦用 */
+	body {
+		background: url(./pic/blake-cheek.jpg);
+		background-size: 100% auto;
+	}
+}
+
+@media screen and (max-width: 375px) {
+
+	/* スマートフォン用 */
+	body {
+		background: url(./pic/blake-cheek.jpg);
+		background-size: 100% auto;
+	}
+}

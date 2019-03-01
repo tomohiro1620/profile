@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <!-- 重要 (文字コード)-->
+  <meta charset="UTF-8" />
+  <!-- 重要(IE互換モード) -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- 重要(レスポンシブウエブデザイン) -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- 重要/SEO対策(タイトルタグ) -->
+  <title>Life*Is*Beautiful</title>
+  <!-- 推奨(メタディスクリプション:ページの内容を表す文章) -->
+  <meta name="description" content="ページの内容を表す文章" />
+  <!-- 重要/SEO対策(meta robots:検索エンジンに対して「このページをインデックス（掲載）しないで！」) -->
+  <meta name="robots" content="noindex,nofollow" />
+  <!-- 重要(OGPタグ/twitterカード) -->
+  <!--  
+    <meta property="og:url" content="ページのURL" />
+    <meta property="og:title" content="ページのタイトル" />
+    <meta property="og:type" content="ページのタイプ">
+    <meta property="og:description" content="記事の抜粋" />
+    <meta property="og:image" content="画像のURL" />
+    <meta name="twitter:card" content="カード種類" />
+    <meta name="twitter:site" content="@Twitterユーザー名" />
+    <meta property="og:site_name" content="サイト名" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="fb:app_id" content="appIDを入力">
+    -->
+  <!-- 推奨(サイトアイコン) -->
+  <link rel="icon" href="画像URL" sizes="16x16" type="image/png" />
+  <link rel="icon" href="画像URL" sizes="32x32" type="image/png" />
+  <link rel="icon" href="画像URL" sizes="48x48" type="image/png" />
+  <link rel="icon" href="画像URL" sizes="62x62" type="image/png" />
+
+  <!-- 推奨(スマホ用アイコン) -->
+  <link rel="apple-touch-icon-precomposed" href="画像のURL" />
+
+  <!-- css/jsファイル読み込み -->
+  <link rel="stylesheet" href="CSSファイルのURL" />
+  <script src="JavaScriptファイルのURL"></script>
+  <!-- profile.html -->
+  <!--
+    <link rel="stylesheet" href="grid-guide.css" />
+    -->
+  <link rel="stylesheet" href="profile.css" />
+  <link rel="stylesheet" href="share.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="main">
+    <section class="header">
+      <h1>Life*Is*Beautiful</h1>
+    </section>
+  </div>
+
+  <div class="main">
+    <section class="box1">
+      <p>2019</p>
+      <!-- タイプ -->
+      <script>
+        var id = ["a", "b", "c", "d", "e"]; //指定するidを全て配列で渡す
+        var tx = [];
+        var txCount = [];
+        var txSp = 100; // テキストの表示速度
+        var dly = 1000; // 次の文章までの待ち時間
+        var count = 0;
+
+        window.onload = function () {
+          kamikakushi();
+          countSet();
+          itimozi();
+        };
+
+        function countSet() {
+          // 文字数カウントの初期設定
+          for (n = 0; n < id.length; n++) {
+            txCount[n] = 0;
+          }
+        }
+
+        function kamikakushi() {
+          // 要素を取得して非表示（opacity:0;）にする
+          for (i = 0; i < id.length; i++) {
+            id[i] = document.getElementById(id[i]);
+            tx[i] = id[i].firstChild.nodeValue; // 初期の文字列
+            id[i].innerHTML = "";
+          }
+        }
+
+        function itimozi() {
+          //　一文字ずつ表示
+          id[count].innerHTML = tx[count].substr(0, ++txCount[count]) + "_"; // テキストの指定した数の間の要素を表示
+          if (tx[count].length != txCount[count]) {
+            // Count が初期の文字列の文字数と同じになるまでループ
+            setTimeout("itimozi()", txSp); // 次の文字へ進む
+          } else {
+            id[count].innerHTML = tx[count].substr(0, ++txCount[count]); // テキストの指定した数の間の要素を表示
+            count++; // 次の段落に進む為のカウントアップ
+            if (count != id.length) {
+              // id数が最後なら終了
+              setTimeout("itimozi()", dly); // 次の段落へ進む
+            }
+          }
+        }
+      </script>
+      <div id="wrap">
+        <div id="a">
+          MyName st_
+        </div>
+        <div id="b">
+          Work Survey and web_
+        </div>
+
+        <div id="c">
+          Music HipHop music_
+        </div>
+        <div id="d">
+          Drink Wisky_
+        </div>
+
+        <div id="e">
+          Thank you!_
+        </div>
+      </div>
+      <!-- タイプ -->
+    </section>
+  </div>
+
+  <div class="main">
+    <section class="box2">
+      <p>
+
+        Photo by
+        <a href="https://unsplash.com/photos/n2w_6qtYWyI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Blake
+          Cheek</a>
+        on
+        <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      </p>
+
+    </section>
+    <section class="footer">
+      <p>Copylight Life*Is*Beautiful</p>
+    </section>
+  </div>
+</body>
+
+</html>
